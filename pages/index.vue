@@ -1,13 +1,17 @@
 <template>
-  <div class="container">
   <main class="container">
-    <h1>Hi from home page</h1>
+    <AppHeader/>
   </main>
-  </div>
 </template>
 
 <script>
-export default {}
+import AppHeader from '@/components/AppHeader.vue';
+
+export default {
+  components: {
+    AppHeader
+  },
+};
 </script>
 
 <style>
