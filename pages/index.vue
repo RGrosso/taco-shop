@@ -1,8 +1,10 @@
 <template>
-  <main class="container">
-    <AppHeader/>
-    <AppRestaurantInfo />
-  </main>
+  <div>
+    <main class="container">
+      <AppHeader/>
+      <AppRestaurantInfo />
+    </main>
+  </div>
 </template>
 
 <script>
@@ -12,7 +14,7 @@ import AppRestaurantInfo from '@/components/AppRestaurantInfo.vue';
 export default {
   components: {
     AppHeader,
-    AppRestaurantInfo
+    AppRestaurantInfo,
   },
 };
 </script>
