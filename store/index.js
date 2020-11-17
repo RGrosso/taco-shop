@@ -1,5 +1,8 @@
+import { v4 as uuidv4 } from "uuid";
+
 export const state = () => ({
-  fooddata: []
+  fooddata: [],
+  cart: []
 });
 
 // export const getters = {
@@ -11,6 +14,10 @@ export const state = () => ({
 export const mutations = {
   updateFoodData: (state, data) => {
     state.fooddata = data;
+  },
+  addToCart: (state, formOutput) => {
+    formOutput.id = uuidv4();
+    state.cart.push(formOutput);
   }
 };
 
@@ -33,8 +40,10 @@ export const actions = {
         });
     } catch (error) {
       console.warn(error);
-      console.warn("Ensure you have .env file in the root directory with the API key.");
-      // For demostration purposes the .env file should contain the following: 
+      console.warn(
+        "Ensure you have .env file in the root directory with the API key."
+      );
+      // For demostration purposes the .env file should contain the following:
       // AWS_API_KEY=Ni9tok2QGz9xOSKsfBp6q87dnjS8zVmo5t45SGsp
     }
   }
